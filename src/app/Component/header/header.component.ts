@@ -7,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  show : boolean
 
   constructor() { }
 
-  
+  showCart()
+  {
+    this.show = !this.show
+    // alert('Mohamed')
+  }
 
   ngOnInit() {
   }
