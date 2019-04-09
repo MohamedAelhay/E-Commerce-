@@ -15,6 +15,7 @@ import { HomeComponent } from './Component/home/home.component'
 
 //Service
 import { ProductService } from './Service/product.service';
+import { SingleProductComponent } from './Component/single-product/single-product.component';
 
 //Shared Components
 
@@ -24,7 +25,8 @@ import { ProductService } from './Service/product.service';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    SingleProductComponent
   ],
   imports: [
     BrowserModule,
