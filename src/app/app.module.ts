@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { HttpClientModule } from '@angular/common/http';
 
 // Main Components
 import { HeaderComponent } from './Component/header/header.component';
@@ -26,7 +27,8 @@ import { HomeComponent } from './Component/home/home.component'
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
