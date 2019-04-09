@@ -13,6 +13,9 @@ import { HeaderComponent } from './Component/header/header.component';
 import { FooterComponent } from './Component/footer/footer.component';
 import { HomeComponent } from './Component/home/home.component'
 
+//Service
+import { ProductService } from './Service/product.service';
+
 //Shared Components
 
 
@@ -30,7 +33,7 @@ import { HomeComponent } from './Component/home/home.component'
     AngularFontAwesomeModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [ ProductService ],
   bootstrap: [AppComponent]
 })
 

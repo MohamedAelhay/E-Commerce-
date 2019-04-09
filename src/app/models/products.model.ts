@@ -1,8 +1,8 @@
 export class Product
 {
-    id: number
-    url: string
-    name: string
-    price: string
-    description: string
+    ID: number
+    Url: string
+    Name: string
+    Price: string
+    Description: string
 }

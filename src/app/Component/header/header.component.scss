@@ -17,16 +17,22 @@ body {
 .lighter-text {
   color: #ABB0BE;
 }
-
+a {
+  cursor: pointer;
+}
 .main-color-text {
   color: $main-color;
 }
 
 nav {
   padding: 20px 0 40px 0;
-  background: rgb(23, 100, 172);
+  background: rgb(180, 189, 236);
+  // z-index: 1;
   font-size: 16px;
-  
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius:10px; 
+
   .navbar-left {
     float: left;
   }

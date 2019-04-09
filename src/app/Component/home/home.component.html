@@ -1,3 +1,20 @@
-<p>
-  home works!
-</p>
+<div class="container col-12">
+ <div *ngFor= "let product of products">
+    <div class="container2">
+      <div class="images">
+        <img src={{product.Url}} />
+      </div>
+      <div class="product">
+        <p>Top Rated Cars</p>
+            <h1>{{product.Name}}</h1>
+            <h2>${{product.Price}}</h2>
+        <p class="desc">{{product.Description}}</p>
+        <div class="buttons">
+          <button class="like"><i class="fas fa-heart"></i></button>
+          <button (click)="goto('/product/{{product.ID}}')" >More</button>
+          <button class="add"><i class="fas fa-plus-circle fa-spin"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
