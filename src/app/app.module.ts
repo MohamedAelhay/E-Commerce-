@@ -9,7 +9,8 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 // Main Components
 import { HeaderComponent } from './Component/header/header.component';
-import { FooterComponent } from './Component/footer/footer.component'
+import { FooterComponent } from './Component/footer/footer.component';
+import { HomeComponent } from './Component/home/home.component'
 
 //Shared Components
 
@@ -18,7 +19,8 @@ import { FooterComponent } from './Component/footer/footer.component'
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
