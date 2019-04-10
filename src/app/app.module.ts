@@ -9,13 +9,14 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { HttpClientModule } from '@angular/common/http';
 
 // Main Components
+import { HomeComponent } from './Component/home/home.component';
 import { HeaderComponent } from './Component/header/header.component';
 import { FooterComponent } from './Component/footer/footer.component';
-import { HomeComponent } from './Component/home/home.component'
+import { SingleProductComponent } from './Component/single-product/single-product.component';
 
 //Service
 import { ProductService } from './Service/product.service';
-import { SingleProductComponent } from './Component/single-product/single-product.component';
+import { LocalStorageHandlerService } from './Service/local-storage-handler.service';
 
 //Shared Components
 
@@ -35,7 +36,7 @@ import { SingleProductComponent } from './Component/single-product/single-produc
     AngularFontAwesomeModule,
     HttpClientModule,
   ],
-  providers: [ ProductService ],
+  providers: [ ProductService , LocalStorageHandlerService ],
   bootstrap: [AppComponent]
 })
 

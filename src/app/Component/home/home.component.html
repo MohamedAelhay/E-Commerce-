@@ -10,9 +10,9 @@
             <h2>${{product.Price}}</h2>
         <p class="desc">{{product.Description}}</p>
         <div class="buttons">
-          <button class="like"><i class="fas fa-heart"></i></button>
-          <button [routerLink]="['/product/',i]" >Read More</button>
-          <button class="add"><i class="fas fa-plus-circle fa-spin"></i></button>
+          <button class="like" (click)="addToWishList(product.ID)"><i class="fas fa-heart"></i></button>
+          <button [routerLink]="['/product/',i]" >Read..</button>
+          <button class="add" (click)="addToCart(product)"><i class="fas fa-plus-circle fa-spin"></i></button>
         </div>
       </div>
     </div>
