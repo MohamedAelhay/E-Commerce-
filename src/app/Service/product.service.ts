@@ -7,9 +7,9 @@ import { Product } from '../models/products.model';
 })
 export class ProductService {
 
-  apiUrl = "https://mohamedaelhay.github.io/JSON-file/products.json"
+  apiUrl = "https://mohamedaelhay.github.io/JSON-file/products.json";
 
-  constructor(private _http:HttpClient) { }
+  constructor(private _http:HttpClient) {}
 
   getProducts ()
   {

@@ -1,5 +1,5 @@
 <div class="container col-12">
- <div *ngFor= "let product of products">
+ <div *ngFor= "let product of products; let i = index">
     <div class="container2">
       <div class="images">
         <img src={{product.Url}} />
@@ -11,7 +11,7 @@
         <p class="desc">{{product.Description}}</p>
         <div class="buttons">
           <button class="like"><i class="fas fa-heart"></i></button>
-          <button (click)="goto('/product/{{product.ID}}')" >More</button>
+          <button [routerLink]="['/product/',i]" >Read More</button>
           <button class="add"><i class="fas fa-plus-circle fa-spin"></i></button>
         </div>
       </div>

@@ -18,9 +18,4 @@ export class HomeComponent implements OnInit {
     return this.productService.getProducts()
       .subscribe(data => this.products = data)
   }
-
-  goto(path: string)
-  {
-    this.router.navigate([path])
-  }
 }
