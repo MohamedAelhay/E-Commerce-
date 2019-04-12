@@ -9,10 +9,12 @@ export class LocalStorageHandlerService {
 
   wichListCounter: BehaviorSubject<any> = new BehaviorSubject('')
   cartCounter : BehaviorSubject<any> = new BehaviorSubject(0)
+  cartBar : BehaviorSubject<any> = new BehaviorSubject('')
 
   constructor() { 
     this.cartCounter.next(this.getCartLength())  
     this.wichListCounter.next(this.getWishListLength())
+    this.cartBar.next(this.getCart())
   }
 
   addToCart(product : Product) { 
@@ -29,6 +31,7 @@ export class LocalStorageHandlerService {
 
       localStorage.setItem('cart',JSON.stringify(cart))
       this.cartCounter.next(cart.length)
+      this.cartBar.next(cart)
   }
 
 
@@ -37,6 +40,7 @@ export class LocalStorageHandlerService {
     cart.splice(itemId,1)
     localStorage.setItem('cart',JSON.stringify(cart))
     this.cartCounter.next(cart.length)
+    this.cartBar.next(cart)
   }
 
   getCart() {
@@ -51,6 +55,10 @@ export class LocalStorageHandlerService {
 
   getCartCounter() {
     return this.cartCounter.asObservable()
+  }
+
+  getCartObs() {
+    return this.cartBar.asObservable()
   }
 
   addToWishList(id : number) {

@@ -8,33 +8,40 @@
 
     <ul class="navbar-right">
       <li><i class="fas fa-heart"><span class="badge">{{wishListCounter}}</span></i></li>
-      <li><a (click) = showCart() id="cart"><i class="fa fa-shopping-cart"></i> Cart <span class="badge">{{cartCounter}}</span></a></li>
+      <!-- Button trigger modal -->
+      <li><a data-toggle="modal" data-target="#exampleModal" id="cart"><i class="fa fa-shopping-cart"></i> Cart <span class="badge">{{cartCounter}}</span></a></li>
     </ul> <!--end navbar-right -->
   </div> <!--end container -->
 </nav>
 
-
-<div *ngIf ="show" 
-class="container" id="cart-items">
-  <div class="shopping-cart">
-    <div class="shopping-cart-header">
-      <i class="fa fa-shopping-cart cart-icon"></i><span class="badge">3</span>
-      <div class="shopping-cart-total">
-        <span class="lighter-text">Total:</span>
-        <span class="main-color-text">$2,229.97</span>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Cart Items</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <table>
+            <thead>
+              <th>Item Name</th>
+              <th>Options</th>
+            </thead>
+            <tbody>
+              <tr *ngFor= "let item of cartItems; let i = index">
+                <td>{{item.Name}}</td>
+                <td><button class="btn btn-danger" (click) = "removeItem(i)">X</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <a href="/cart" class="button">Go To Cart</a>        
+        </div>
       </div>
-    </div> <!--end shopping-cart-header -->
-
-    <ul class="shopping-cart-items">
-      <li class="clearfix">
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item1.jpg" alt="item1" />
-        <span class="item-name">Sony DSC-RX100M III</span>
-        <span class="item-price">$849.99</span>
-        <span class="item-quantity">Quantity: 01</span>
-      </li>
-    </ul>
-
-    <a href="/cart" class="button">Checkout</a>
-  </div> <!--end shopping-cart -->
-</div> <!--end container -->
+    </div>
+  </div>
 

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { LocalStorageHandlerService } from 'src/app/Service/local-storage-handler.service';
-import { Route } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -12,13 +11,9 @@ export class HeaderComponent implements OnInit {
   show : boolean
   wishListCounter : any
   cartCounter : any
+  cartItems
 
   constructor(private storageHandler : LocalStorageHandlerService) {}
-
-  showCart()
-  {
-    this.show = !this.show
-  }
 
   ngOnInit() {
     this.storageHandler.getCartCounter()    
@@ -26,5 +21,12 @@ export class HeaderComponent implements OnInit {
 
     this.storageHandler.getWishListCounter()    
       .subscribe(data => this.wishListCounter = data)
+
+    this.storageHandler.getCartObs()
+      .subscribe(data => this.cartItems = data)
+  }
+
+  removeItem(id) {
+    this.storageHandler.removeCartItem(id)
   }
 }
