@@ -18,6 +18,9 @@ import { SingleProductComponent } from './Component/single-product/single-produc
 import { ProductService } from './Service/product.service';
 import { LocalStorageHandlerService } from './Service/local-storage-handler.service';
 import { CartComponent } from './Component/cart/cart.component';
+import { LoginComponent } from './Component/login/login.component';
+import { RegistrationComponent } from './Component/registration/registration.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 //Shared Components
 
@@ -29,7 +32,9 @@ import { CartComponent } from './Component/cart/cart.component';
     FooterComponent,
     HomeComponent,
     SingleProductComponent,
-    CartComponent
+    CartComponent,
+    LoginComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +42,7 @@ import { CartComponent } from './Component/cart/cart.component';
     NgbModule,
     AngularFontAwesomeModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [ ProductService , LocalStorageHandlerService ],
   bootstrap: [AppComponent]
