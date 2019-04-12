@@ -1,12 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../models/products.model';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LocalStorageHandlerService {
 
-  constructor() { }
+  wichListCounter: BehaviorSubject<any> = new BehaviorSubject('')
+  cartCounter : BehaviorSubject<any> = new BehaviorSubject(0)
+
+  constructor() { 
+    this.cartCounter.next(this.getCartLength())  
+    this.wichListCounter.next(this.getWishListLength())
+  }
 
   addToCart(product : Product) { 
     let cart = this.getCart()
@@ -20,12 +27,22 @@ export class LocalStorageHandlerService {
         cart.splice(exists,1,product)
       }    
 
-    localStorage.setItem('cart',JSON.stringify(cart))
+      localStorage.setItem('cart',JSON.stringify(cart))
+      this.cartCounter.next(cart.length)
   }
 
   getCart() {
     let cart = JSON.parse(localStorage.getItem('cart')) || []
     return cart
+  }
+
+  getCartLength() {
+    let cart = this.getCart()
+    return cart.length
+  }
+
+  getCartCounter() {
+    return this.cartCounter.asObservable()
   }
 
   addToWishList(id : number) {
@@ -36,6 +53,7 @@ export class LocalStorageHandlerService {
       wishList.push(id)
     }
     localStorage.setItem('wishList', JSON.stringify(wishList))
+    this.wichListCounter.next(wishList.length)
   }
 
   getWishListLength() {
@@ -46,5 +64,9 @@ export class LocalStorageHandlerService {
   getWishList() {
     let wishList = JSON.parse(localStorage.getItem('wishList')) || []
     return wishList
+  }
+
+  getWishListCounter() {
+    return this.wichListCounter
   }
 }
