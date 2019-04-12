@@ -17,6 +17,7 @@ import { SingleProductComponent } from './Component/single-product/single-produc
 //Service
 import { ProductService } from './Service/product.service';
 import { LocalStorageHandlerService } from './Service/local-storage-handler.service';
+import { CartComponent } from './Component/cart/cart.component';
 
 //Shared Components
 
@@ -27,7 +28,8 @@ import { LocalStorageHandlerService } from './Service/local-storage-handler.serv
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    SingleProductComponent
+    SingleProductComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

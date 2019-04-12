@@ -31,6 +31,14 @@ export class LocalStorageHandlerService {
       this.cartCounter.next(cart.length)
   }
 
+
+  removeCartItem(itemId) {
+    let cart = this.getCart()
+    cart.splice(itemId,1)
+    localStorage.setItem('cart',JSON.stringify(cart))
+    this.cartCounter.next(cart.length)
+  }
+
   getCart() {
     let cart = JSON.parse(localStorage.getItem('cart')) || []
     return cart
@@ -67,6 +75,6 @@ export class LocalStorageHandlerService {
   }
 
   getWishListCounter() {
-    return this.wichListCounter
+    return this.wichListCounter.asObservable()
   }
 }
