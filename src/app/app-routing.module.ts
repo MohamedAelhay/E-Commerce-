@@ -5,13 +5,15 @@ import { SingleProductComponent } from './Component/single-product/single-produc
 import { CartComponent } from './Component/cart/cart.component';
 import { LoginComponent } from './Component/login/login.component';
 import { RegistrationComponent } from './Component/registration/registration.component';
+import { NotfoundComponent } from './Component/notfound/notfound.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
   {path:'product/:id', component: SingleProductComponent},
   {path:'cart', component: CartComponent},
   {path:'login', component: LoginComponent},
-  {path:'registration', component: RegistrationComponent}
+  {path:'registration', component: RegistrationComponent},
+  {path:'**', component: NotfoundComponent}
 
 ];
 

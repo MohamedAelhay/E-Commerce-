@@ -21,6 +21,7 @@ import { CartComponent } from './Component/cart/cart.component';
 import { LoginComponent } from './Component/login/login.component';
 import { RegistrationComponent } from './Component/registration/registration.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NotfoundComponent } from './Component/notfound/notfound.component';
 
 //Shared Components
 
@@ -34,7 +35,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     SingleProductComponent,
     CartComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
